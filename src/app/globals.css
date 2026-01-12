@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 220 38 38; /* red-600 */
+    --primary-foreground: 255 255 255;
+    --background: 255 255 255;
+    --foreground: 23 23 23; /* neutral-900 */
+    --muted: 245 245 245; /* neutral-100 */
+    --muted-foreground: 115 115 115; /* neutral-500 */
+    --border: 229 229 229; /* neutral-200 */
+    --ring: 220 38 38; /* red-600 */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-neutral-900 antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-600 ring-offset-2;
+  }
+
+  /* Smooth scrolling for anchor links */
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Button base styles */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-medium rounded-lg transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600;
+    @apply active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-primary-600 border-2 border-primary-600 hover:bg-primary-50 focus:ring-primary-600;
+  }
+
+  .btn-ghost {
+    @apply btn text-neutral-700 hover:bg-neutral-100 focus:ring-neutral-400;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-xl border border-neutral-200 shadow-sm;
+    @apply hover:shadow-md transition-shadow duration-200;
+  }
+
+  /* Container */
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  /* Form input styles */
+  .input {
+    @apply w-full px-4 py-3 rounded-lg border border-neutral-300;
+    @apply bg-white text-neutral-900 placeholder-neutral-400;
+    @apply focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 focus:outline-none;
+    @apply transition-colors duration-200;
+  }
+
+  .input-error {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-500/20;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-neutral-700 mb-2;
+  }
+
+  .error-text {
+    @apply mt-1 text-sm text-red-600;
+  }
+
+  /* Link styles */
+  .link {
+    @apply text-primary-600 hover:text-primary-700 underline underline-offset-2;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-600/20 focus:rounded;
+  }
+}
+
+@layer utilities {
+  /* Text balance for better typography */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradient backgrounds */
+  .gradient-subtle {
+    @apply bg-gradient-to-b from-neutral-50 to-white;
+  }
+
+  /* Skeleton loading animation */
+  .skeleton {
+    @apply animate-pulse bg-neutral-200 rounded;
+  }
+}
+
+
+
+
+
+
+
