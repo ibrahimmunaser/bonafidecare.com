@@ -1,10 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Optimize for memory-constrained environments (Render free tier)
-  experimental: {
-    optimizeCss: true, // Reduce CSS bundle size
-  },
-  
   // Reduce memory usage during build
   swcMinify: true,
   
