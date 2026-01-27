@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "NODE_OPTIONS='--max_old_space_size=460' next build",
     "start": "next start",
-    "lint": "next lint",
-    "test": "vitest",
-    "test:ui": "vitest --ui"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "^14.2.0",
