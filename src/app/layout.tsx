@@ -3,6 +3,7 @@ import { Inter, Outfit } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { FloatingBookingWidget } from '@/components/booking/FloatingBookingWidget';
 import { seoDefaults, clinicInfo } from '@/config/content';
 
 const inter = Inter({
@@ -72,8 +73,8 @@ const structuredData = {
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '09:00',
-      closes: '17:00',
+      opens: '10:00',
+      closes: '18:00',
     },
   ],
   medicalSpecialty: 'Primary Care',
@@ -98,6 +99,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <FloatingBookingWidget />
       </body>
     </html>
   );

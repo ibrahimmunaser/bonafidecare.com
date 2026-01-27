@@ -27,19 +27,19 @@ export const clinicInfo = {
   
   // Clinic operating hours
   hours: {
-    monday: '9:00 AM - 5:00 PM',
-    tuesday: '9:00 AM - 5:00 PM',
-    wednesday: '9:00 AM - 5:00 PM',
-    thursday: '9:00 AM - 5:00 PM',
-    friday: '9:00 AM - 5:00 PM',
+    monday: '10:00 AM - 6:00 PM',
+    tuesday: '10:00 AM - 6:00 PM',
+    wednesday: '10:00 AM - 6:00 PM',
+    thursday: '10:00 AM - 6:00 PM',
+    friday: '10:00 AM - 6:00 PM',
     saturday: 'Closed',
     sunday: 'Closed',
   },
   
   // For availability calculation
   workingHours: {
-    start: 9, // 9 AM
-    end: 17,  // 5 PM
+    start: 10, // 10 AM
+    end: 18,  // 6 PM
     slotDurationMinutes: 30,
     workingDays: [1, 2, 3, 4, 5], // Monday to Friday (0 = Sunday)
   },
