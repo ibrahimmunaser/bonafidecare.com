@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Standalone mode for minimal production server (reduces memory usage)
+  output: 'standalone',
+  
   // Reduce memory usage during build
   swcMinify: true,
   

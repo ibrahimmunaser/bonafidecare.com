@@ -3,11 +3,13 @@ services:
     name: bonafide-care
     env: node
     plan: free
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    buildCommand: npm ci --only=production && npm run build && cp -R public .next/standalone/ && cp -R .next/static .next/standalone/.next/
+    startCommand: cd .next/standalone && NODE_OPTIONS='--max_old_space_size=460' node server.js
     envVars:
       - key: NODE_ENV
         value: production
-      - key: NODE_OPTIONS
-        value: --max_old_space_size=460
+      - key: HOSTNAME
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
     healthCheckPath: /
