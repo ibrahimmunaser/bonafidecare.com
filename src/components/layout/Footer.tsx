@@ -16,12 +16,16 @@ export function Footer() {
               href="/"
               className="flex items-center"
             >
-              <div className="relative h-12 w-auto" style={{ width: '150px' }}>
+              <div className="relative h-16 w-auto" style={{ width: '220px' }}>
                 <Image
                   src="/Images/logo.png"
                   alt={`${clinicInfo.name} Logo`}
                   fill
                   className="object-contain"
+                  style={{ 
+                    mixBlendMode: 'multiply',
+                    filter: 'brightness(0) invert(1)'
+                  }}
                 />
               </div>
             </Link>
