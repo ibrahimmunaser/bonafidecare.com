@@ -22,10 +22,6 @@ export function Footer() {
                   alt={`${clinicInfo.name} Logo`}
                   fill
                   className="object-contain"
-                  style={{ 
-                    mixBlendMode: 'multiply',
-                    filter: 'brightness(0) invert(1)'
-                  }}
                 />
               </div>
             </Link>
