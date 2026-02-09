@@ -28,13 +28,13 @@ export default function ServicesPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-24 lg:pt-28 pb-12 bg-white">
+      <section className="pt-24 lg:pt-28 pb-16 bg-gradient-to-b from-white to-neutral-50">
         <div className="container-wide">
-          <div className="max-w-2xl">
-            <h1 className="font-heading text-4xl sm:text-5xl font-bold text-neutral-900">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900">
               Our Services
             </h1>
-            <p className="mt-4 text-lg text-neutral-600">
+            <p className="mt-6 text-xl text-neutral-600 leading-relaxed">
               Comprehensive primary care designed to keep you healthy at every stage of life.
             </p>
           </div>
@@ -50,43 +50,43 @@ export default function ServicesPage() {
         return (
           <section 
             key={service.id}
-            className={`section ${isRedBackground ? 'bg-primary-600' : 'bg-white'}`}
+            className={`py-16 lg:py-24 ${isRedBackground ? 'bg-primary-600' : 'bg-neutral-50'}`}
           >
             <div className="container-wide">
               <div 
-                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 items-center`}
+                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-16 items-center`}
               >
                 {/* Icon/Visual */}
-                <div className="w-full lg:w-1/3">
-                  <div className={`aspect-square max-w-xs mx-auto rounded-2xl ${
+                <div className="w-full lg:w-2/5">
+                  <div className={`aspect-square max-w-sm mx-auto rounded-3xl ${
                     isRedBackground 
-                      ? 'bg-gradient-to-br from-white/20 to-primary-700 border-white/30' 
-                      : 'bg-gradient-to-br from-primary-50 to-white border-primary-100'
-                  } flex items-center justify-center border`}>
-                    <Icon className={`w-24 h-24 ${isRedBackground ? 'text-white' : 'text-primary-600'}`} />
+                      ? 'bg-gradient-to-br from-white/10 to-primary-700/50 border-2 border-white/20 shadow-xl' 
+                      : 'bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100 shadow-lg'
+                  } flex items-center justify-center`}>
+                    <Icon className={`w-28 h-28 ${isRedBackground ? 'text-white' : 'text-primary-600'}`} />
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="w-full lg:w-2/3">
-                  <h2 className={`font-heading text-2xl sm:text-3xl font-bold ${
+                <div className="w-full lg:w-3/5">
+                  <h2 className={`font-heading text-3xl sm:text-4xl font-bold ${
                     isRedBackground ? 'text-white' : 'text-neutral-900'
                   }`}>
                     {service.title}
                   </h2>
-                  <p className={`mt-4 text-lg leading-relaxed ${
-                    isRedBackground ? 'text-primary-50' : 'text-neutral-600'
+                  <p className={`mt-6 text-lg leading-relaxed ${
+                    isRedBackground ? 'text-white/90' : 'text-neutral-600'
                   }`}>
                     {service.fullDescription}
                   </p>
                   {service.items && service.items.length > 0 && (
-                    <ul className="mt-6 space-y-2">
+                    <ul className="mt-8 space-y-3">
                       {service.items.map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <CheckCircle2 className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
+                          <CheckCircle2 className={`w-6 h-6 flex-shrink-0 mt-0.5 ${
                             isRedBackground ? 'text-white' : 'text-primary-600'
                           }`} />
-                          <span className={isRedBackground ? 'text-white' : 'text-neutral-700'}>
+                          <span className={`text-base ${isRedBackground ? 'text-white' : 'text-neutral-700'}`}>
                             {item}
                           </span>
                         </li>
@@ -100,15 +100,18 @@ export default function ServicesPage() {
         );
       })}
 
-      {/* Additional Services Info */}
-      <section className="section bg-primary-600">
+      {/* Call to Action */}
+      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h2 className="font-heading text-3xl font-bold text-white">
+              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-white">
                 What to Expect
               </h2>
-              <ul className="mt-6 space-y-4">
+              <p className="mt-4 text-lg text-white/90 leading-relaxed">
+                When you visit Bonafide Care, you can count on receiving personalized, thorough care that puts you first.
+              </p>
+              <ul className="mt-8 space-y-4">
                 {[
                   'Thorough initial health assessments',
                   'Personalized treatment plans',
@@ -117,37 +120,43 @@ export default function ServicesPage() {
                   'Follow-up care and ongoing support',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
-                    <span className="text-primary-50">{item}</span>
+                    <CheckCircle2 className="w-6 h-6 text-white flex-shrink-0 mt-0.5" />
+                    <span className="text-white/95 text-base">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="card p-8 bg-primary-600 text-white border-primary-600">
-              <h3 className="font-heading text-2xl font-bold">
+            <div className="bg-white rounded-3xl shadow-2xl p-10 lg:p-12">
+              <h3 className="font-heading text-3xl font-bold text-neutral-900">
                 Ready to Schedule?
               </h3>
-              <p className="mt-4 text-primary-100 leading-relaxed">
+              <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
                 Whether you're a new patient or returning for a follow-up, 
                 we're here to help you on your health journey.
               </p>
-              <Link href="/book" className="btn bg-white text-primary-600 hover:bg-primary-50 mt-6">
+              <Link href="/book" className="btn bg-primary-600 text-white hover:bg-primary-700 mt-8 w-full justify-center text-lg py-4">
                 Book an Appointment
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-5 h-5" />
               </Link>
+              <p className="mt-6 text-center text-sm text-neutral-500">
+                Same-day appointments often available
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Emergency Notice */}
-      <section className="py-8 bg-red-50 border-y border-red-100">
-        <div className="container-wide text-center">
-          <p className="text-red-800 font-medium">
-            <span className="font-bold">⚠️ Medical Emergency?</span>{' '}
-            If you are experiencing a medical emergency, please call 911 or visit your nearest emergency room.
-          </p>
+      <section className="py-6 bg-red-600">
+        <div className="container-wide">
+          <div className="flex items-center justify-center gap-3 text-center">
+            <span className="text-3xl">⚠️</span>
+            <p className="text-white font-medium">
+              <span className="font-bold">Medical Emergency?</span>{' '}
+              Call 911 or visit your nearest emergency room immediately.
+            </p>
+          </div>
         </div>
       </section>
     </>
