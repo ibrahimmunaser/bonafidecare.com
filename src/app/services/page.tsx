@@ -42,50 +42,63 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="section bg-white">
-        <div className="container-wide">
-          <div className="space-y-12">
-            {services.map((service, index) => {
-              const Icon = iconMap[service.icon] || Stethoscope;
-              const isEven = index % 2 === 0;
-              
-              return (
-                <div 
-                  key={service.id}
-                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 items-center`}
-                >
-                  {/* Icon/Visual */}
-                  <div className="w-full lg:w-1/3">
-                    <div className="aspect-square max-w-xs mx-auto rounded-2xl bg-gradient-to-br from-primary-50 to-white flex items-center justify-center border border-primary-100">
-                      <Icon className="w-24 h-24 text-primary-600" />
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="w-full lg:w-2/3">
-                    <h2 className="font-heading text-2xl sm:text-3xl font-bold text-neutral-900">
-                      {service.title}
-                    </h2>
-                    <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
-                      {service.fullDescription}
-                    </p>
-                    {service.items && service.items.length > 0 && (
-                      <ul className="mt-6 space-y-2">
-                        {service.items.map((item, i) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <CheckCircle2 className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" />
-                            <span className="text-neutral-700">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+      {services.map((service, index) => {
+        const Icon = iconMap[service.icon] || Stethoscope;
+        const isEven = index % 2 === 0;
+        const isRedBackground = index % 2 === 0;
+        
+        return (
+          <section 
+            key={service.id}
+            className={`section ${isRedBackground ? 'bg-primary-600' : 'bg-white'}`}
+          >
+            <div className="container-wide">
+              <div 
+                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 items-center`}
+              >
+                {/* Icon/Visual */}
+                <div className="w-full lg:w-1/3">
+                  <div className={`aspect-square max-w-xs mx-auto rounded-2xl ${
+                    isRedBackground 
+                      ? 'bg-gradient-to-br from-white/20 to-primary-700 border-white/30' 
+                      : 'bg-gradient-to-br from-primary-50 to-white border-primary-100'
+                  } flex items-center justify-center border`}>
+                    <Icon className={`w-24 h-24 ${isRedBackground ? 'text-white' : 'text-primary-600'}`} />
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+
+                {/* Content */}
+                <div className="w-full lg:w-2/3">
+                  <h2 className={`font-heading text-2xl sm:text-3xl font-bold ${
+                    isRedBackground ? 'text-white' : 'text-neutral-900'
+                  }`}>
+                    {service.title}
+                  </h2>
+                  <p className={`mt-4 text-lg leading-relaxed ${
+                    isRedBackground ? 'text-primary-50' : 'text-neutral-600'
+                  }`}>
+                    {service.fullDescription}
+                  </p>
+                  {service.items && service.items.length > 0 && (
+                    <ul className="mt-6 space-y-2">
+                      {service.items.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <CheckCircle2 className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
+                            isRedBackground ? 'text-white' : 'text-primary-600'
+                          }`} />
+                          <span className={isRedBackground ? 'text-white' : 'text-neutral-700'}>
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })}
 
       {/* Additional Services Info */}
       <section className="section bg-primary-600">
