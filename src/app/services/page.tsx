@@ -13,7 +13,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'Services',
-  description: 'Primary care services at Bonafide Care including preventive care, chronic condition management, blood pressure checks, diabetes support, and same-day appointments.',
+  description: 'Comprehensive primary care services at Bonafide Care including preventive care, same-day sick visits, chronic disease management, women\'s & men\'s health, minor injuries, physicals, lab testing, and care coordination.',
 };
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -69,6 +69,16 @@ export default function ServicesPage() {
                     <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
                       {service.fullDescription}
                     </p>
+                    {service.items && service.items.length > 0 && (
+                      <ul className="mt-6 space-y-2">
+                        {service.items.map((item, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" />
+                            <span className="text-neutral-700">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               );
