@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { provider, whyChooseUs, clinicInfo } from '@/config/content';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
@@ -34,13 +35,15 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Provider Image */}
             <div className="lg:sticky lg:top-28">
-              <div className="aspect-[3/4] max-w-md rounded-2xl bg-gradient-to-br from-neutral-100 to-neutral-50 flex items-center justify-center border border-neutral-200/50 mx-auto lg:mx-0">
-                <div className="text-center p-8">
-                  <span className="text-8xl">👨‍⚕️</span>
-                  <p className="mt-4 text-neutral-500 text-sm">
-                    Provider photo placeholder
-                  </p>
-                </div>
+              <div className="aspect-[3/4] max-w-md rounded-2xl overflow-hidden shadow-xl mx-auto lg:mx-0">
+                <Image
+                  src="/Images/Doctor.png"
+                  alt={provider.fullName}
+                  width={600}
+                  height={800}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </div>
             </div>
 

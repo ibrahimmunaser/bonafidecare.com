@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { provider, whyChooseUs } from '@/config/content';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
@@ -9,14 +10,16 @@ export function AboutPreview() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Provider Info */}
           <div>
-            {/* Provider Image Placeholder */}
-            <div className="aspect-[3/4] max-w-md rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 mx-auto lg:mx-0">
-              <div className="text-center p-8">
-                <span className="text-6xl">👨‍⚕️</span>
-                <p className="mt-4 text-primary-100 text-sm">
-                  Provider photo placeholder
-                </p>
-              </div>
+            {/* Provider Image */}
+            <div className="aspect-[3/4] max-w-md rounded-2xl overflow-hidden shadow-2xl mx-auto lg:mx-0 border-4 border-white/20">
+              <Image
+                src="/Images/Doctor.png"
+                alt={provider.fullName}
+                width={600}
+                height={800}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
           </div>
 
