@@ -49,7 +49,7 @@ export const provider = {
   name: 'Salahuddin Mohamed',
   credentials: 'PA-C',
   fullName: 'Salahuddin Mohamed, PA-C',
-  title: 'Physician Assistant',
+  title: 'Physician Associate',
   
   // This text must be used verbatim as specified
   bio: `Salahuddin Mohamed is a PA with experience in primary care, urgent care, and cardiology. He's passionate about delivering high-quality, patient-centered care with a focus on clear communication, prevention, and practical treatment plans that fit real life.
@@ -58,7 +58,7 @@ Salahuddin has always wanted to build a practice that serves the community—esp
 
 Outside the clinic, Salahuddin enjoys playing sports, spending time with family, and traveling. His goal at Bonafide Care is simple: provide reliable care, build long-term relationships, and help patients feel confident about their health.`,
   
-  shortBio: `Salahuddin Mohamed is a Physician Assistant with experience in primary care, urgent care, and cardiology. He's passionate about delivering high-quality, patient-centered care with a focus on clear communication and prevention.`,
+  shortBio: `Salahuddin Mohamed is a Physician Associate with experience in primary care, urgent care, and cardiology. He's passionate about delivering high-quality, patient-centered care with a focus on clear communication and prevention.`,
 } as const;
 
 export const services = [
@@ -207,7 +207,7 @@ export const seoDefaults = {
   keywords: [
     'primary care clinic',
     'Lincoln Park MI',
-    'physician assistant',
+    'physician associate',
     'family medicine',
     'preventive care',
     'diabetes management',
