@@ -165,7 +165,7 @@ export function FloatingBookingWidget() {
 
     // Close modal when clicking on overlay
     const closeBooking = (e: MouseEvent) => {
-      if (e.target === iframeContainer) {
+      if (iframeContainer && e.target === iframeContainer) {
         iframeContainer.style.display = 'none';
         // Restore body scroll
         document.body.style.overflow = '';
