@@ -1,14 +1,12 @@
 'use client';
 
 import { useEffect } from 'react';
-import { booking } from '@/config/content';
 
 /**
- * Floating Booking Widget
+ * Floating Booking Widget with Tebra Integration
  * 
  * A floating button that appears in the bottom-right corner of all pages.
- * Provides an always-available way to book appointments.
- * Opens booking in a new tab for maximum compatibility.
+ * Opens the Tebra booking system in an iframe modal overlay.
  */
 export function FloatingBookingWidget() {
   useEffect(() => {
@@ -21,8 +19,9 @@ export function FloatingBookingWidget() {
         position: fixed;
         bottom: 1.25rem;
         right: 1.25rem;
-        width: 4rem;
-        height: 4rem;
+        width: 4.5rem;
+        height: 4.5rem;
+        padding: 1.25rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -42,37 +41,41 @@ export function FloatingBookingWidget() {
       
       .booking-button:focus {
         outline: none;
-        box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.4);
+        outline: 2px solid rgba(220, 38, 38, 0.5);
       }
       
       .booking-button:active {
         transform: scale(0.95);
       }
 
-      .booking-button svg {
-        width: 1.75rem;
-        height: 1.75rem;
+      #iframeContainer {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 1000;
+        backdrop-filter: blur(4px);
       }
 
-      .booking-tooltip {
-        position: absolute;
-        right: 5rem;
-        bottom: 1.25rem;
-        background: rgba(0, 0, 0, 0.9);
-        color: white;
-        padding: 0.625rem 1rem;
-        border-radius: 0.5rem;
-        font-size: 0.875rem;
-        font-weight: 500;
-        white-space: nowrap;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.2s ease;
-        z-index: 998;
+      #iframeContainer > div {
+        position: relative;
+        width: 90%;
+        max-width: 1200px;
+        height: 90%;
+        margin: 2% auto;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
       }
 
-      .booking-button:hover + .booking-tooltip {
-        opacity: 1;
+      #bookingIframe {
+        width: 100%;
+        height: 100%;
+        border: none;
       }
 
       @media (max-width: 768px) {
@@ -82,14 +85,11 @@ export function FloatingBookingWidget() {
           bottom: 1rem;
           right: 1rem;
         }
-        
-        .booking-button svg {
-          width: 1.5rem;
-          height: 1.5rem;
-        }
 
-        .booking-tooltip {
-          display: none;
+        #iframeContainer > div {
+          width: 95%;
+          height: 95%;
+          margin: 2.5% auto;
         }
       }
 
@@ -120,9 +120,14 @@ export function FloatingBookingWidget() {
     `;
     document.head.appendChild(style);
 
-    // Create widget container
+    // Create widget container with iframe modal
     const container = document.createElement('div');
     container.innerHTML = `
+      <div id="iframeContainer">
+        <div>
+          <iframe id="bookingIframe"></iframe>
+        </div>
+      </div>
       <button 
         class="booking-button" 
         id="bookingButton"
@@ -130,6 +135,7 @@ export function FloatingBookingWidget() {
         title="Book an Appointment"
       >
         <svg 
+          version="1.1" 
           fill="currentColor" 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 24 24"
@@ -139,28 +145,42 @@ export function FloatingBookingWidget() {
           <path d="M7 12h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2z"/>
         </svg>
       </button>
-      <div class="booking-tooltip">Book Appointment</div>
     `;
     document.body.appendChild(container);
 
     // Set up event listeners
     const bookingButton = document.getElementById('bookingButton');
+    const iframeContainer = document.getElementById('iframeContainer');
+    const bookingIframe = document.getElementById('bookingIframe') as HTMLIFrameElement;
 
+    // Open booking modal
     const openBooking = () => {
-      // Open booking system in new tab
-      window.open(booking.tebraSchedulingUrl, '_blank', 'noopener,noreferrer');
-      
-      // Optional: Add analytics tracking here
-      console.log('Booking widget clicked - opening Tebra scheduler');
+      if (bookingIframe && iframeContainer) {
+        bookingIframe.src = 'https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_84_63229';
+        iframeContainer.style.display = 'block';
+        // Prevent body scroll when modal is open
+        document.body.style.overflow = 'hidden';
+      }
     };
 
-    // Open on button click
+    // Close modal when clicking on overlay
+    const closeBooking = (e: MouseEvent) => {
+      if (e.target === iframeContainer) {
+        iframeContainer.style.display = 'none';
+        // Restore body scroll
+        document.body.style.overflow = '';
+      }
+    };
+
+    // Attach event listeners
     bookingButton?.addEventListener('click', openBooking);
+    iframeContainer?.addEventListener('click', closeBooking);
 
     // Cleanup
     return () => {
       style.remove();
       container.remove();
+      document.body.style.overflow = '';
     };
   }, []);
 
