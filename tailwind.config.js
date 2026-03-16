@@ -8,19 +8,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Primary clinic colors - Dark Burgundy/Maroon
+        // Primary clinic colors - Custom Burgundy/Terra Cotta
         primary: {
-          50: '#fdf4f4',
-          100: '#fbe8e8',
-          200: '#f8d5d5',
-          300: '#f2b3b3',
-          400: '#e88888',
-          500: '#d96060',
-          600: '#8B1538',  // Main burgundy
-          700: '#6B1028',  // Darker burgundy
-          800: '#4D0C1E',  // Very dark burgundy
-          900: '#3A0917',  // Almost black burgundy
-          950: '#1F0409',  // Deepest burgundy
+          50: '#fdf5f5',
+          100: '#fbe9e9',
+          200: '#f7d7d6',
+          300: '#efb8b7',
+          400: '#e48e8d',
+          500: '#d46766',
+          600: '#A03D3C',  // Main custom burgundy
+          700: '#8A3332',  // Darker
+          800: '#732A29',  // Very dark
+          900: '#5F2322',  // Almost black burgundy
+          950: '#321312',  // Deepest
         },
         // Neutral tones for depth
         neutral: {
