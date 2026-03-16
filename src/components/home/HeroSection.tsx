@@ -61,18 +61,17 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* Hero Image Placeholder */}
+          {/* Hero Image */}
           <div className="relative hidden lg:block">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/20 bg-white/10">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
               <Image
-                src="/Images/image 1.jpg"
-                alt="Bonafide Care Primary Care Clinic"
+                src="/Images/consultation.jpg"
+                alt="Doctor consulting with patient at Bonafide Care Primary Care Clinic"
                 fill
                 priority
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
             </div>
             {/* Decorative elements */}
             <div className="absolute -z-10 top-8 right-8 w-full h-full rounded-2xl bg-white/5" />
