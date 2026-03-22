@@ -20,9 +20,9 @@ export function Footer() {
                 <Image
                   src="/Images/logo.png"
                   alt={`${clinicInfo.name} Logo`}
-                  height={80}
-                  width={320}
-                  className="object-contain h-[80px] w-auto"
+                  height={100}
+                  width={400}
+                  className="object-contain h-[90px] lg:h-[100px] w-auto"
                 />
               </div>
             </Link>
