@@ -8,32 +8,32 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Primary clinic colors - Custom Burgundy/Terra Cotta
+        // Primary clinic colors - Custom Red (#C83A2E)
         primary: {
-          50: '#fdf5f5',
-          100: '#fbe9e9',
-          200: '#f7d7d6',
-          300: '#efb8b7',
-          400: '#e48e8d',
-          500: '#d46766',
-          600: '#A03D3C',  // Main custom burgundy
-          700: '#8A3332',  // Darker
-          800: '#732A29',  // Very dark
-          900: '#5F2322',  // Almost black burgundy
-          950: '#321312',  // Deepest
+          50: '#fef5f4',
+          100: '#fde9e7',
+          200: '#fbd7d4',
+          300: '#f7b8b3',
+          400: '#f08f87',
+          500: '#e5675d',
+          600: '#C83A2E',  // Main custom red
+          700: '#b32f24',  // Darker
+          800: '#95271f',  // Very dark
+          900: '#7c241f',  // Almost black red
+          950: '#431210',  // Deepest
         },
-        // Neutral tones for depth
+        // Neutral tones - Custom Dark Blue (#2E4062)
         neutral: {
-          50: '#fafafa',
-          100: '#f5f5f5',
-          200: '#e5e5e5',
-          300: '#d4d4d4',
-          400: '#a3a3a3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#171717',
+          50: '#f6f7f9',
+          100: '#eceef2',
+          200: '#d5dae2',
+          300: '#b1baca',
+          400: '#8695ad',
+          500: '#677694',
+          600: '#525f7a',
+          700: '#434e64',
+          800: '#2E4062',  // Main custom dark blue
+          900: '#273654',  // Darker
         },
       },
       fontFamily: {

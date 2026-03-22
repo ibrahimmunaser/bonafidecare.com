@@ -148,7 +148,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Emergency Notice */}
-      <section className="py-6 bg-red-600">
+      <section className="py-6 bg-primary-600">
         <div className="container-wide">
           <div className="flex items-center justify-center gap-3 text-center">
             <span className="text-3xl">⚠️</span>

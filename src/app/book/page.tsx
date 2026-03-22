@@ -23,7 +23,7 @@ export default function BookPage() {
       </section>
 
       {/* Emergency Notice */}
-      <div className="bg-red-600">
+      <div className="bg-primary-600">
         <div className="container-wide py-4">
           <p className="text-white text-sm text-center font-medium">
             <span className="font-bold">⚠️ Medical Emergency?</span> Call 911 or visit your nearest emergency room immediately.
