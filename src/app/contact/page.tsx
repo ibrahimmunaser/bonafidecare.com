@@ -13,13 +13,13 @@ export default function ContactPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-24 lg:pt-28 pb-12 bg-primary-600">
+      <section className="pt-24 lg:pt-28 pb-12 bg-white">
         <div className="container-wide">
-          <div className="max-w-2xl">
-            <h1 className="font-heading text-4xl sm:text-5xl font-bold text-white">
+          <div className="max-w-2xl mx-auto text-center">
+            <h1 className="font-heading text-4xl sm:text-5xl font-bold text-neutral-900">
               Contact Us
             </h1>
-            <p className="mt-4 text-lg text-primary-50">
+            <p className="mt-4 text-lg text-neutral-600">
               Have a question or need to reach us? We're here to help.
             </p>
           </div>
@@ -27,12 +27,12 @@ export default function ContactPage() {
       </section>
 
       {/* Main Content */}
-      <section className="section bg-white">
+      <section className="section bg-primary-600">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="font-heading text-2xl font-bold text-neutral-900 mb-6">
+              <h2 className="font-heading text-2xl font-bold text-white mb-6">
                 Send Us a Message
               </h2>
               <ContactForm />
@@ -44,20 +44,20 @@ export default function ContactPage() {
               <PatientPortal />
 
               {/* Contact Information */}
-              <div className="card p-6">
-                <h3 className="font-heading text-xl font-bold text-neutral-900 mb-6">
+              <div className="card p-6 bg-white">
+                <h3 className="font-heading text-xl font-bold text-primary-600 mb-6">
                   Contact Information
                 </h3>
 
                 <div className="space-y-6">
                   {/* Address */}
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 text-primary-600" />
+                    <div className="w-10 h-10 rounded-lg bg-primary-600 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <p className="font-medium text-neutral-900">Address</p>
-                      <p className="text-neutral-600 mt-1">{clinicInfo.address.full}</p>
+                      <p className="font-medium text-primary-600">Address</p>
+                      <p className="text-neutral-700 mt-1">{clinicInfo.address.full}</p>
                       <a
                         href={clinicInfo.address.googleMapsUrl}
                         target="_blank"
@@ -72,14 +72,14 @@ export default function ContactPage() {
 
                   {/* Email */}
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 text-primary-600" />
+                    <div className="w-10 h-10 rounded-lg bg-primary-600 flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <p className="font-medium text-neutral-900">Email</p>
+                      <p className="font-medium text-primary-600">Email</p>
                       <a
                         href={`mailto:${clinicInfo.contact.email}`}
-                        className="text-primary-600 hover:text-primary-700 mt-1 block"
+                        className="text-neutral-700 hover:text-primary-600 mt-1 block"
                       >
                         {clinicInfo.contact.email}
                       </a>
@@ -88,12 +88,12 @@ export default function ContactPage() {
 
                   {/* Hours */}
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-5 h-5 text-primary-600" />
+                    <div className="w-10 h-10 rounded-lg bg-primary-600 flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <p className="font-medium text-neutral-900">Office Hours</p>
-                      <div className="text-neutral-600 mt-1 text-sm space-y-1">
+                      <p className="font-medium text-primary-600">Office Hours</p>
+                      <div className="text-neutral-700 mt-1 text-sm space-y-1">
                         <p>Monday – Friday: {clinicInfo.hours.monday}</p>
                         <p>Saturday – Sunday: Closed</p>
                       </div>
@@ -103,7 +103,7 @@ export default function ContactPage() {
               </div>
 
               {/* Map */}
-              <div className="rounded-xl overflow-hidden border border-neutral-200 shadow-sm">
+              <div className="rounded-xl overflow-hidden border border-white/20 shadow-sm">
                 <iframe
                   title="Clinic Location"
                   src={`https://www.google.com/maps?q=${encodeURIComponent(clinicInfo.address.full)}&output=embed`}
@@ -121,9 +121,9 @@ export default function ContactPage() {
       </section>
 
       {/* Emergency Notice */}
-      <section className="py-8 bg-red-50 border-y border-red-100">
+      <section className="py-8 bg-primary-600">
         <div className="container-wide text-center">
-          <p className="text-red-800 font-medium">
+          <p className="text-white font-medium">
             <span className="font-bold">⚠️ Medical Emergency?</span>{' '}
             If you are experiencing a medical emergency, please call 911 or visit your nearest emergency room.
           </p>

@@ -26,7 +26,7 @@ export function Footer() {
                 />
               </div>
             </Link>
-            <p className="mt-4 text-neutral-400 text-sm leading-relaxed">
+            <p className="mt-4 text-white text-sm leading-relaxed">
               {clinicInfo.tagline}
             </p>
           </div>
@@ -34,7 +34,7 @@ export function Footer() {
           {/* Contact Info */}
           <div>
             <h3 className="font-heading font-semibold text-lg mb-4">Contact</h3>
-            <ul className="space-y-3 text-neutral-400 text-sm">
+            <ul className="space-y-3 text-white text-sm">
               <li>
                 <a
                   href={clinicInfo.address.googleMapsUrl}
@@ -61,7 +61,7 @@ export function Footer() {
           {/* Hours */}
           <div>
             <h3 className="font-heading font-semibold text-lg mb-4">Hours</h3>
-            <ul className="space-y-2 text-neutral-400 text-sm">
+            <ul className="space-y-2 text-white text-sm">
               <li className="flex items-start gap-2">
                 <Clock className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <div>
@@ -79,7 +79,7 @@ export function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="font-heading font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-neutral-400 text-sm">
+            <ul className="space-y-2 text-white text-sm">
               <li>
                 <Link href="/book" className="hover:text-white transition-colors">
                   Book Appointment
@@ -107,10 +107,10 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-neutral-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-neutral-500 text-sm">
+            <p className="text-white text-sm">
               © {currentYear} {clinicInfo.name}. All rights reserved.
             </p>
-            <div className="flex gap-6 text-neutral-500 text-sm">
+            <div className="flex gap-6 text-white text-sm">
               <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
@@ -121,7 +121,7 @@ export function Footer() {
           </div>
           
           {/* Medical disclaimer */}
-          <p className="mt-6 text-neutral-600 text-xs text-center md:text-left">
+          <p className="mt-6 text-white text-xs text-center md:text-left">
             The information on this website is for general informational purposes only and does not 
             constitute medical advice. If you are experiencing a medical emergency, please call 911 
             or go to your nearest emergency room.

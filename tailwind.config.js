@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Primary clinic colors - Darker Red to match logo
+        // Primary clinic colors - Logo Red (#9B2C23)
         primary: {
           50: '#fef5f4',
           100: '#fde8e6',
@@ -16,11 +16,11 @@ module.exports = {
           300: '#f7aba3',
           400: '#f0786c',
           500: '#e54f3f',
-          600: '#9B2C23',  // Main darker red from logo
-          700: '#842419',  // Darker
-          800: '#6e1f16',  // Very dark
-          900: '#5b1d17',  // Almost black red
-          950: '#310c0a',  // Deepest
+          600: '#9B2C23',  // Main logo red - ONLY red used on site
+          700: '#842419',
+          800: '#6e1f16',
+          900: '#5b1d17',
+          950: '#310c0a',
         },
         // Neutral tones - Custom Dark Blue (#2E4062)
         neutral: {
