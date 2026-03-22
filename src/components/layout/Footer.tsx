@@ -16,7 +16,7 @@ export function Footer() {
               href="/"
               className="flex items-center"
             >
-              <div className="relative h-24 w-auto" style={{ width: '360px' }}>
+              <div className="relative h-[48px] w-auto" style={{ width: '720px' }}>
                 <Image
                   src="/Images/logo.png"
                   alt={`${clinicInfo.name} Logo`}
