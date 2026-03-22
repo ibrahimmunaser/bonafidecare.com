@@ -21,15 +21,13 @@ export function HeroSection() {
             
             {/* CTAs */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a 
-                href={booking.tebraSchedulingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link 
+                href="/book"
                 className="btn bg-white text-primary-600 hover:bg-primary-50 text-lg px-8 py-4"
               >
                 {heroContent.primaryCta}
                 <ArrowRight className="h-5 w-5" />
-              </a>
+              </Link>
               
               <div className="flex gap-3">
                 <a

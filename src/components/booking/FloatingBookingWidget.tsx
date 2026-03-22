@@ -1,14 +1,17 @@
 'use client';
 
 import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 /**
- * Floating Booking Widget with Tebra Integration
+ * Floating Booking Widget
  * 
  * A floating button that appears in the bottom-right corner of all pages.
- * Opens the Tebra booking system in an iframe modal overlay.
+ * Navigates to the /book page when clicked.
  */
 export function FloatingBookingWidget() {
+  const router = useRouter();
+
   useEffect(() => {
     // Create and inject styles
     const style = document.createElement('style');
@@ -48,48 +51,12 @@ export function FloatingBookingWidget() {
         transform: scale(0.95);
       }
 
-      #iframeContainer {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.5);
-        z-index: 1000;
-        backdrop-filter: blur(4px);
-      }
-
-      #iframeContainer > div {
-        position: relative;
-        width: 90%;
-        max-width: 1200px;
-        height: 90%;
-        margin: 2% auto;
-        background: white;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-      }
-
-      #bookingIframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-
       @media (max-width: 768px) {
         .booking-button {
           width: 3.5rem;
           height: 3.5rem;
           bottom: 1rem;
           right: 1rem;
-        }
-
-        #iframeContainer > div {
-          width: 95%;
-          height: 95%;
-          margin: 2.5% auto;
         }
       }
 
@@ -120,14 +87,9 @@ export function FloatingBookingWidget() {
     `;
     document.head.appendChild(style);
 
-    // Create widget container with iframe modal
+    // Create widget container
     const container = document.createElement('div');
     container.innerHTML = `
-      <div id="iframeContainer">
-        <div>
-          <iframe id="bookingIframe"></iframe>
-        </div>
-      </div>
       <button 
         class="booking-button" 
         id="bookingButton"
@@ -148,41 +110,22 @@ export function FloatingBookingWidget() {
     `;
     document.body.appendChild(container);
 
-    // Set up event listeners
+    // Set up event listener
     const bookingButton = document.getElementById('bookingButton');
-    const iframeContainer = document.getElementById('iframeContainer');
-    const bookingIframe = document.getElementById('bookingIframe') as HTMLIFrameElement;
 
-    // Open booking modal
-    const openBooking = () => {
-      if (bookingIframe && iframeContainer) {
-        bookingIframe.src = 'https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_84_63229';
-        iframeContainer.style.display = 'block';
-        // Prevent body scroll when modal is open
-        document.body.style.overflow = 'hidden';
-      }
+    const navigateToBooking = () => {
+      router.push('/book');
     };
 
-    // Close modal when clicking on overlay
-    const closeBooking = (e: MouseEvent) => {
-      if (iframeContainer && e.target === iframeContainer) {
-        iframeContainer.style.display = 'none';
-        // Restore body scroll
-        document.body.style.overflow = '';
-      }
-    };
-
-    // Attach event listeners
-    bookingButton?.addEventListener('click', openBooking);
-    iframeContainer?.addEventListener('click', closeBooking);
+    // Navigate on button click
+    bookingButton?.addEventListener('click', navigateToBooking);
 
     // Cleanup
     return () => {
       style.remove();
       container.remove();
-      document.body.style.overflow = '';
     };
-  }, []);
+  }, [router]);
 
   return null; // This component only injects the widget via useEffect
 }
