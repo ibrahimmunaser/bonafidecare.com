@@ -42,7 +42,7 @@ export function Header() {
             href="/"
             className="flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 rounded flex-shrink-0"
           >
-            <div className="relative h-[88px] w-auto lg:h-[100px]" style={{ width: '520px' }}>
+            <div className="relative h-[100px] w-auto lg:h-[104px]" style={{ width: '1040px' }}>
               <Image
                 src="/Images/logo.png"
                 alt={`${clinicInfo.name} Logo`}
