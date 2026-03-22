@@ -17,7 +17,7 @@ export function FloatingBookingWidget() {
     const style = document.createElement('style');
     style.innerText = `
       .booking-button {
-        background-color: #C83A2E;
+        background-color: #9B2C23;
         color: white;
         position: fixed;
         bottom: 1.25rem;
@@ -37,14 +37,14 @@ export function FloatingBookingWidget() {
       }
       
       .booking-button:hover {
-        background-color: #b32f24;
+        background-color: #842419;
         transform: scale(1.05);
         box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
       }
       
       .booking-button:focus {
         outline: none;
-        outline: 2px solid rgba(200, 58, 46, 0.5);
+        outline: 2px solid rgba(155, 44, 35, 0.5);
       }
       
       .booking-button:active {
@@ -80,7 +80,7 @@ export function FloatingBookingWidget() {
         position: absolute;
         inset: -4px;
         border-radius: 9999px;
-        background: #C83A2E;
+        background: #9B2C23;
         opacity: 0;
         animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
       }
