@@ -42,12 +42,13 @@ export function Header() {
             href="/"
             className="flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 rounded flex-shrink-0"
           >
-            <div className="relative h-[100px] w-auto lg:h-[104px]" style={{ width: '1040px' }}>
+            <div className="relative h-[90px] lg:h-[100px]" style={{ aspectRatio: 'auto', width: 'auto' }}>
               <Image
                 src="/Images/logo.png"
                 alt={`${clinicInfo.name} Logo`}
-                fill
-                className="object-contain"
+                height={100}
+                width={400}
+                className="object-contain h-[90px] lg:h-[100px] w-auto"
                 style={{ 
                   objectPosition: 'center',
                   imageRendering: 'crisp-edges',

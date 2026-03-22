@@ -16,12 +16,13 @@ export function Footer() {
               href="/"
               className="flex items-center"
             >
-              <div className="relative h-[96px] w-auto" style={{ width: '1440px' }}>
+              <div className="relative">
                 <Image
                   src="/Images/logo.png"
                   alt={`${clinicInfo.name} Logo`}
-                  fill
-                  className="object-contain"
+                  height={80}
+                  width={320}
+                  className="object-contain h-[80px] w-auto"
                 />
               </div>
             </Link>
