@@ -32,19 +32,21 @@ export default function BookPage() {
       </div>
 
       {/* Tebra Booking Iframe */}
-      <section className="bg-neutral-50 py-8">
+      <section className="bg-neutral-50 py-8 min-h-screen">
         <div className="container-wide">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden" style={{ minHeight: '800px' }}>
+          <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
             <iframe
               src="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_84_63229"
+              className="w-full"
               style={{
-                width: '100%',
-                height: '800px',
+                height: '1000px',
+                minHeight: '100vh',
                 border: 'none',
                 display: 'block'
               }}
-              title="Book an Appointment"
+              title="Book an Appointment with Bonafide Care"
               loading="eager"
+              allowFullScreen
             />
           </div>
         </div>
