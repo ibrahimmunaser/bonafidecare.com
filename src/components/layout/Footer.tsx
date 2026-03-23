@@ -7,7 +7,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#2E4062] text-white">
+    <footer className="bg-white text-[#2E4062]">
       <div className="container-wide py-12 lg:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -26,21 +26,21 @@ export function Footer() {
                 />
               </div>
             </Link>
-            <p className="mt-4 text-white text-sm leading-relaxed">
+            <p className="mt-4 text-[#2E4062] text-sm leading-relaxed">
               {clinicInfo.tagline}
             </p>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-4">Contact</h3>
-            <ul className="space-y-3 text-white text-sm">
+            <h3 className="font-heading font-semibold text-lg mb-4 text-[#2E4062]">Contact</h3>
+            <ul className="space-y-3 text-[#2E4062] text-sm">
               <li>
                 <a
                   href={clinicInfo.address.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2 hover:text-white transition-colors"
+                  className="flex items-start gap-2 hover:text-primary-600 transition-colors"
                 >
                   <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
                   <span>{clinicInfo.address.full}</span>
@@ -49,7 +49,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${clinicInfo.contact.email}`}
-                  className="flex items-center gap-2 hover:text-white transition-colors"
+                  className="flex items-center gap-2 hover:text-primary-600 transition-colors"
                 >
                   <Mail className="h-4 w-4 flex-shrink-0" />
                   <span>{clinicInfo.contact.email}</span>
@@ -60,8 +60,8 @@ export function Footer() {
 
           {/* Hours */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-4">Hours</h3>
-            <ul className="space-y-2 text-white text-sm">
+            <h3 className="font-heading font-semibold text-lg mb-4 text-[#2E4062]">Hours</h3>
+            <ul className="space-y-2 text-[#2E4062] text-sm">
               <li className="flex items-start gap-2">
                 <Clock className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <div>
@@ -78,25 +78,25 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-white text-sm">
+            <h3 className="font-heading font-semibold text-lg mb-4 text-[#2E4062]">Quick Links</h3>
+            <ul className="space-y-2 text-[#2E4062] text-sm">
               <li>
-                <Link href="/book" className="hover:text-white transition-colors">
+                <Link href="/book" className="hover:text-primary-600 transition-colors">
                   Book Appointment
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link href="/services" className="hover:text-primary-600 transition-colors">
                   Our Services
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
+                <Link href="/about" className="hover:text-primary-600 transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <Link href="/contact" className="hover:text-primary-600 transition-colors">
                   Contact Us
                 </Link>
               </li>
@@ -105,23 +105,23 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-neutral-800">
+        <div className="mt-12 pt-8 border-t border-neutral-200">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white text-sm">
+            <p className="text-[#2E4062] text-sm">
               © {currentYear} {clinicInfo.name}. All rights reserved.
             </p>
-            <div className="flex gap-6 text-white text-sm">
-              <Link href="/privacy" className="hover:text-white transition-colors">
+            <div className="flex gap-6 text-[#2E4062] text-sm">
+              <Link href="/privacy" className="hover:text-primary-600 transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-white transition-colors">
+              <Link href="/terms" className="hover:text-primary-600 transition-colors">
                 Terms of Use
               </Link>
             </div>
           </div>
           
           {/* Medical disclaimer */}
-          <p className="mt-6 text-white text-xs text-center md:text-left">
+          <p className="mt-6 text-[#2E4062]/70 text-xs text-center md:text-left">
             The information on this website is for general informational purposes only and does not 
             constitute medical advice. If you are experiencing a medical emergency, please call 911 
             or go to your nearest emergency room.

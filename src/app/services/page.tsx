@@ -28,7 +28,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-24 lg:pt-28 pb-16 bg-gradient-to-b from-white to-neutral-50">
+      <section className="pt-24 lg:pt-28 pb-12 bg-gradient-to-b from-white to-neutral-50">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900">

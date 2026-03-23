@@ -116,13 +116,13 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="section bg-white">
+      <section className="section bg-primary-600">
         <div className="container-wide">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-heading text-3xl font-bold text-neutral-900">
+            <h2 className="font-heading text-3xl font-bold text-white">
               Ready to Experience the Difference?
             </h2>
-            <p className="mt-4 text-lg text-neutral-600">
+            <p className="mt-4 text-lg text-white">
               Schedule your first appointment and see what patient-centered care really feels like.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
